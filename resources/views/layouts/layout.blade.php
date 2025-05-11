@@ -12,6 +12,8 @@
     <!-- Tailwind CDN -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
 </head>
 <body style="font-family: 'Montserrat', sans-serif;">
     @include('partials.header')
@@ -19,6 +21,19 @@
         @yield('contenido')
     </main>
     @include('partials.footer')
+
+    @stack('scripts')
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+    AOS.init({
+        once: true,
+        duration: 1000,
+        easing: 'ease-out-cubic'
+    });
+</script>
+
+
 </body>
 
 </html>
